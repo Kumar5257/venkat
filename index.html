@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="rtm.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download PDF</title>
+</head>
+<body>
+  <!-- Button to trigger download -->
+  <button id="downloadBtn">Download PDF</button>
+
+  <script>
+    // JavaScript to handle the download
+    document.getElementById('downloadBtn').addEventListener('click', function() {
+      // URL of the PDF file
+      const pdfUrl = 'https://www.pw.live/exams/wp-content/uploads/2024/02/2021.pdf';
+
+      // Create an anchor element
+      const link = document.createElement('a');
+      link.href = pdfUrl;
+      link.download = 'sample.pdf'; // Set the default file name
+
+      // Append the anchor to the document, trigger the click, and remove it
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  </script>
+</body>
+</html>
